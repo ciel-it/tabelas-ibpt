@@ -1,0 +1,25 @@
+name: Sincronizar tabelas IBPT
+on:
+  schedule:
+    - cron: '0 9 * * 1'   # segunda, 09:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python scripts/sincronizar.py
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ibpt/nova-versao
+          title: "Nova versão da tabela IBPT"
+          commit-message: "feat: nova versão da tabela IBPT"
+          delete-branch: true
+          body: |
+            ZIP baixado do espelho público e validado (27 CSVs, cabeçalho, versão, vigência, alíquotas).
+            **Antes do merge:** conferir versão e vigência contra o e-mail do IBPT e o portal De Olho no Imposto.
