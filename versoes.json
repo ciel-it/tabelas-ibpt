@@ -14,5 +14,13 @@
     "arquivo": "repositorio-ibpt/TabelaIBPTax_26.2.C.zip",
     "sha256": "1bce0fe3ab0958314449fa1959b6756ae9bac2edeffb05f5659ef5ccd9120728",
     "ufs": 27
+  },
+  {
+    "versao": "26.2.D",
+    "vigencia_inicio": "2026-11-17",
+    "vigencia_fim": "2026-12-20",
+    "arquivo": "repositorio-ibpt/TabelaIBPTax_26.2.D.zip",
+    "sha256": "e6164a52f59e5c9d01fd5bf3fe20935aafa4200cc5a0947ae01974524b2c00fe",
+    "ufs": 27
   }
 ]
